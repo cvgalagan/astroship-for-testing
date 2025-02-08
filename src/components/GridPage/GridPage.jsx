@@ -1,8 +1,8 @@
 import InfiniteTimer from '../InfiniteTimer/InfiniteTimer'; // Импортируем компонент InfiniteTimer. Убедитесь, что путь верен.
 import './GridPage.css'; // Импортируем стили для сетки. Убедитесь, что путь верен.
 
-const GridPage = ({ timersCount }) => {
-    const timers = Array.from({ length: timersCount }, (_, index) => <InfiniteTimer key={index} />);
+const GridPage = ({ timersCount, isTimersEnabled }) => {
+    const timers = Array.from({ length: timersCount }, (_, index) => <InfiniteTimer key={index} isEnabled={isTimersEnabled} />);
   
     return (
       <div className="grid-container">

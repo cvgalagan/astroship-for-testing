@@ -1,20 +1,23 @@
-// import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
-const InfiniteTimer = () => {
-//   const [count, setCount] = useState(0);
+const InfiniteTimer = ({ isEnabled }) => {
+  const [count, setCount] = useState(0);
 
-//   useEffect(() => {
-//     // const timerId = setInterval(() => {
-//     //   setCount((prevCount) => prevCount + 1);
-//     // }, 1000);
-
-//     // // Очистка таймера при размонтировании компонента
-//     // return () => clearInterval(timerId);
-//   }, []);
+  useEffect(() => {
+    let timerId = null;
+    if (isEnabled) {
+      timerId = setInterval(() => {
+        setCount((prevCount) => prevCount + 1);
+      }, 1000);
+    }
+    
+    // Очистка таймера при размонтировании компонента
+    return () => clearInterval(timerId);
+  }, [isEnabled]);
 
   return (
     <div>
-      <p>Счетчик: {0}</p>
+      <p>Счетчик: {count}</p>
     </div>
   );
 };
