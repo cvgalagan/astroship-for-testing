@@ -8,15 +8,15 @@ import { partytownSnippet } from '@builder.io/partytown/integration';
 export default defineConfig({
   plugins: [
     react(),
-    partytownVite({
-      dest: path.join(__dirname, 'dist', '~partytown'),
-    }),
-    {
-      name: 'insert-partytown',
-      transformIndexHtml: {
-        order: 'pre',
-        handler(html) { return html.replace("/* partytownSnippet */", partytownSnippet()) }
-      }
-    }
+    // partytownVite({
+    //   dest: path.join(__dirname, 'dist', '~partytown'),
+    // }),
+    // {
+    //   name: 'insert-partytown',
+    //   transformIndexHtml: {
+    //     order: 'pre',
+    //     handler(html) { return html.replace("/* partytownSnippet */", partytownSnippet()) }
+    //   }
+    // }
   ],
 })
