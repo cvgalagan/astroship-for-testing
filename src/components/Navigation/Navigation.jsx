@@ -10,19 +10,27 @@ function Navigation() {
         <h1 className="nav-title">External Scripts</h1>
         <ul className="nav-links">
           <li>
-            <Link 
-              to="/" 
+            <Link
+              to="/"
               className={location.pathname === '/' ? 'nav-link active' : 'nav-link'}
             >
               Главная
             </Link>
           </li>
           <li>
-            <Link 
-              to="/forms" 
+            <Link
+              to="/forms"
               className={location.pathname === '/forms' ? 'nav-link active' : 'nav-link'}
             >
               Формы
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/window"
+              className={location.pathname === '/window' ? 'nav-link active' : 'nav-link'}
+            >
+              Окна
             </Link>
           </li>
         </ul>

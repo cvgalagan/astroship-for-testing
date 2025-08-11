@@ -3,6 +3,7 @@ import './App.css'
 import Navigation from './components/Navigation/Navigation'
 import HomePage from './components/HomePage/HomePage'
 import FormsPage from './components/FormsPage/FormsPage'
+import WindowPage from './components/WindowPage/WindowPage'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/forms" element={<FormsPage />} />
+            <Route path="/window" element={<WindowPage />} />
           </Routes>
         </main>
       </div>
