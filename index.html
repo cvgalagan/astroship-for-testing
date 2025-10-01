@@ -32,14 +32,22 @@
       m[i].l=1*new Date();
       for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+      (window, document, "script", "https://mc.yandex.ru/metrika/watch_serp.js", "ym");
 
-      ym(101671390, "init", {
+      // ym(101671390, "init", {
+      //     clickmap:true,
+      //     trackLinks:true,
+      //     accurateTrackBounce:true,
+      //     webvisor:true
+      // });
+      setTimeout(() => {
+        var counter = new Ya.Metrika(101671390, {
           clickmap:true,
           trackLinks:true,
           accurateTrackBounce:true,
           webvisor:true
-      });
+        })
+      }, 2000);
     </script>
     <!-- /Yandex.Metrika counter -->
   </body>
