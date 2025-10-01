@@ -6,6 +6,9 @@
   # Cross-Origin-Embedder-Policy = "require-corp"
   # Cross-Origin-Opener-Policy = "same-origin"
 
+  # CSP
+  Content-Security-Policy = "script-src 'self' mc.yandex.ru; connect-src 'self' mc.yandex.ru;"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
