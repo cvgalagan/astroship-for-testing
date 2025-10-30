@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const InfiniteTimer = ({ isEnabled }) => {
+const InfiniteTimer = ({ isEnabled, className }) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -10,13 +10,13 @@ const InfiniteTimer = ({ isEnabled }) => {
         setCount((prevCount) => prevCount + 1);
       }, 1000);
     }
-    
+
     // Очистка таймера при размонтировании компонента
     return () => clearInterval(timerId);
   }, [isEnabled]);
 
   return (
-    <div>
+    <div className={className}>
       <p>Счетчик: {count}</p>
     </div>
   );

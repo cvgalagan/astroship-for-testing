@@ -1,10 +1,10 @@
 .navigation {
-  background-color: #f8f9fa;
-  color: #333;
+  background-color: #1a1a1a;
+  color: rgba(255, 255, 255, 0.87);
   padding: 0;
   margin-bottom: 20px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  border-bottom: 1px solid #e9ecef;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  border-bottom: 1px solid #333;
 }
 
 .nav-container {
@@ -20,7 +20,7 @@
   margin: 0;
   font-size: 1.5rem;
   font-weight: bold;
-  color: #2c3e50;
+  color: rgba(255, 255, 255, 0.87);
 }
 
 .nav-links {
@@ -38,7 +38,7 @@
 .nav-link {
   display: block;
   padding: 20px 25px;
-  color: #6c757d;
+  color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
@@ -46,14 +46,42 @@
 }
 
 .nav-link:hover {
-  color: #2c3e50;
-  background-color: #e9ecef;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #2a2a2a;
 }
 
 .nav-link.active {
-  color: #0d6efd;
-  border-bottom-color: #0d6efd;
-  background-color: #e7f1ff;
+  color: #646cff;
+  border-bottom-color: #646cff;
+  background-color: #2a2a2a;
+}
+
+@media (prefers-color-scheme: light) {
+  .navigation {
+    background-color: #f8f9fa;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border-bottom: 1px solid #e9ecef;
+  }
+
+  .nav-title {
+    color: #2c3e50;
+  }
+
+  .nav-link {
+    color: #6c757d;
+  }
+
+  .nav-link:hover {
+    color: #2c3e50;
+    background-color: #e9ecef;
+  }
+
+  .nav-link.active {
+    color: #0d6efd;
+    border-bottom-color: #0d6efd;
+    background-color: #e7f1ff;
+  }
 }
 
 @media (max-width: 768px) {
