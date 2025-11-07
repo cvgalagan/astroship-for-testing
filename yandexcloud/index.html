@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Переход на внешний сайт</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            color: white;
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            line-height: 1.2;
+        }
+
+        .description {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            margin-bottom: 2.5rem;
+            line-height: 1.5;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .external-link-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            text-decoration: none;
+            font-size: clamp(1.1rem, 4vw, 1.3rem);
+            font-weight: 600;
+            padding: 18px 40px;
+            border-radius: 50px;
+            box-shadow: 0 8px 25px rgba(238, 90, 36, 0.4);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            min-height: 60px;
+            min-width: 280px;
+        }
+
+        .external-link-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .external-link-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(238, 90, 36, 0.5);
+            background: linear-gradient(45deg, #ff5252, #d84315);
+        }
+
+        .external-link-button:hover:before {
+            left: 100%;
+        }
+
+        .external-link-button:active {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(238, 90, 36, 0.4);
+        }
+
+        .external-link-button .button-text {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .external-link-button .arrow {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .external-link-button:hover .arrow {
+            transform: translateX(5px);
+        }
+
+        .info-text {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            margin-top: 1.5rem;
+            font-style: italic;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .external-link-button {
+                padding: 16px 32px;
+                min-width: 250px;
+                min-height: 56px;
+            }
+
+            h1 {
+                margin-bottom: 1.2rem;
+            }
+
+            .description {
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (hover: none) {
+            .external-link-button:hover {
+                transform: none;
+            }
+
+            .external-link-button:active {
+                transform: scale(0.98);
+            }
+        }
+
+        /* Анимация появления */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .external-link-button {
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .info-text {
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Переход на внешний ресурс</h1>
+        <p class="description">
+            Нажмите на кнопку ниже, чтобы перейти на внешний сайт.
+            Вы будете перенаправлены на http://external-scripts.netlify.app
+        </p>
+
+        <div class="button-container">
+            <a href="https://external-scripts.netlify.app"
+               class="external-link-button">
+                <span class="button-text">
+                    Перейти на сайт
+                    <span class="arrow">→</span>
+                </span>
+            </a>
+        </div>
+
+        <p class="info-text">
+            Ссылка откроется в новой вкладке браузера с сохранением реферера
+        </p>
+    </div>
+</body>
+</html>
