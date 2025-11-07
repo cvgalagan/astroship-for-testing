@@ -8,7 +8,8 @@ function PrivateBrowsingPage() {
   })
 
   const [metricInfo, setMetricInfo] = useState({
-    referrer: '',
+    documentReferrer: '',
+    externalScriptReferrer: '',
     queryParams: {},
     loading: true,
     error: null
@@ -43,7 +44,7 @@ function PrivateBrowsingPage() {
 
       try {
         window.ym(101671390, 'getReferrer', (data) => {
-          const [referrer, search] = data || ['', '']
+          const [[documentReferrer, externalScriptReferrer], search] = data || [['', ''], '']
 
           const urlParams = new URLSearchParams(search)
           const params = {}
@@ -52,7 +53,8 @@ function PrivateBrowsingPage() {
           }
 
           setMetricInfo({
-            referrer: referrer || 'Нет referrer',
+            documentReferrer: documentReferrer || 'Нет referrer',
+            externalScriptReferrer: externalScriptReferrer || 'Нет referrer',
             queryParams: params,
             loading: false,
             error: null
@@ -60,7 +62,8 @@ function PrivateBrowsingPage() {
         })
       } catch (err) {
         setMetricInfo({
-          referrer: '',
+          documentReferrer: '',
+          externalScriptReferrer: '',
           queryParams: {},
           loading: false,
           error: err.message
@@ -123,10 +126,14 @@ function PrivateBrowsingPage() {
           {!metricInfo.loading && !metricInfo.error && (
             <>
               <div className="info-card">
-                <h3 className="section-subtitle">Counter Referrer</h3>
+                <h3 className="section-subtitle">Counter Referrers</h3>
                 <div className="info-row">
-                  <span className="info-label">Referrer:</span>
-                  <span className="info-value">{metricInfo.referrer}</span>
+                  <span className="info-label">Document Referrer:</span>
+                  <span className="info-value">{metricInfo.documentReferrer}</span>
+                </div>
+                <div className="info-row">
+                  <span className="info-label">External Script Referrer:</span>
+                  <span className="info-value">{metricInfo.externalScriptReferrer}</span>
                 </div>
               </div>
 
