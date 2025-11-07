@@ -33,6 +33,14 @@ function Navigation() {
               Окна
             </Link>
           </li>
+          <li>
+            <Link
+              to="/private-browsing"
+              className={location.pathname === '/private-browsing' ? 'nav-link active' : 'nav-link'}
+            >
+              Private Browsing
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>

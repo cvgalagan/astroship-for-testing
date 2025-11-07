@@ -4,6 +4,7 @@ import Navigation from './components/Navigation/Navigation'
 import HomePage from './components/HomePage/HomePage'
 import FormsPage from './components/FormsPage/FormsPage'
 import WindowPage from './components/WindowPage/WindowPage'
+import PrivateBrowsingPage from './components/PrivateBrowsingPage/PrivateBrowsingPage'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/forms" element={<FormsPage />} />
             <Route path="/window" element={<WindowPage />} />
+            <Route path="/private-browsing" element={<PrivateBrowsingPage />} />
           </Routes>
         </main>
       </div>
