@@ -209,6 +209,87 @@
   word-break: break-all;
 }
 
+/* Dark theme support */
+@media (prefers-color-scheme: dark) {
+  .window-page h1 {
+    color: rgba(255, 255, 255, 0.87);
+  }
+
+  .page-description {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .form-section {
+    background: #2a2a2a;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  }
+
+  .form-section h2 {
+    color: rgba(255, 255, 255, 0.87);
+    border-bottom-color: #646cff;
+  }
+
+  .form-group label {
+    color: rgba(255, 255, 255, 0.87);
+  }
+
+  .form-group input[type="url"],
+  .form-group textarea {
+    background-color: #1a1a1a;
+    color: rgba(255, 255, 255, 0.87);
+    border-color: #444;
+  }
+
+  .form-group input[type="url"]:focus,
+  .form-group textarea:focus {
+    border-color: #646cff;
+    box-shadow: 0 0 0 3px rgba(100, 108, 255, 0.2);
+  }
+
+  .form-hint {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .submit-btn:disabled {
+    background: #444;
+  }
+
+  .result-message {
+    background-color: #1a3a2a;
+    border-color: #27ae60;
+    color: #27ae60;
+  }
+
+  .result-message h3 {
+    color: #27ae60;
+  }
+
+  .info-section {
+    background: #2a2a2a;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    border-left-color: #646cff;
+  }
+
+  .info-section h2 {
+    color: rgba(255, 255, 255, 0.87);
+  }
+
+  .info-block h3 {
+    color: rgba(255, 255, 255, 0.87);
+  }
+
+  .info-block ul,
+  .info-block ol {
+    color: rgba(255, 255, 255, 0.87);
+  }
+
+  .info-block code {
+    background-color: #1a1a1a;
+    color: #ff6b6b;
+    border-color: #444;
+  }
+}
+
 /* Адаптивность */
 @media (max-width: 768px) {
   .window-page {
