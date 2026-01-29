@@ -49,6 +49,7 @@ Four main routes defined in `src/App.jsx`:
 - **FormsPage**: Page for testing form interactions with various input types
 - **WindowPage**: Page for testing window object behavior
 - **ActivityPage**: Page for testing user activity tracking with scrollable images, video players, and dynamic image galleries
+- **ControlButtons**: Shared component for add/remove/toggle controls with optional input field and count display (used in HomePage and ActivityPage)
 
 ### Analytics Integration
 Yandex.Metrika is embedded directly in `index.html` with WebVisor enabled. The counter ID is `101671390`. Note that `referrer:document.referrer` is explicitly passed in the initialization (see git history for referrer-related changes).

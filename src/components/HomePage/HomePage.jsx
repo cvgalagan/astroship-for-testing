@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux'
 import GridPage from '../GridPage/GridPage'
+import ControlButtons from '../ControlButtons/ControlButtons'
 import {
   addTimers,
   removeTimers,
@@ -9,7 +10,6 @@ import {
   selectNewTimersCount,
   selectIsTimersEnabled
 } from '../../store/timers/timersSlice'
-import './HomePage.css'
 
 function HomePage() {
   const dispatch = useDispatch()
@@ -35,24 +35,21 @@ function HomePage() {
 
   return (
     <>
-      <div style={{ marginBottom: '20px' }}>
-        <div className="button-group">
-          <div>
-            <label>
-              Количество таймеров:
-              <input
-                type="number"
-                value={newTimersCount}
-                onChange={(e) => handleNewTimersCountChange(Number(e.target.value))}
-                style={{ marginLeft: '10px', marginRight: '10px' }}
-              />
-            </label>
-          </div>
-          <button onClick={handleAddTimers}>Добавить {newTimersCount} таймеров</button>
-          <button onClick={handleRemoveTimers}>Удалить {newTimersCount} таймеров</button>
-          <button onClick={handleToggleTimers}>{isTimersEnabled ? "Выключить таймеры" : "Включить таймеры"}</button>
-        </div>
-        </div>
+      <ControlButtons
+        addLabel={`Добавить ${newTimersCount} таймеров`}
+        removeLabel={`Удалить ${newTimersCount} таймеров`}
+        onAdd={handleAddTimers}
+        onRemove={handleRemoveTimers}
+        currentCount={timersCount}
+        countLabel="Всего таймеров"
+        showInput={true}
+        inputValue={newTimersCount}
+        onInputChange={handleNewTimersCountChange}
+        inputLabel="Количество таймеров"
+        showToggle={true}
+        toggleLabel={isTimersEnabled ? "Выключить таймеры" : "Включить таймеры"}
+        onToggle={handleToggleTimers}
+      />
       <GridPage timersCount={timersCount} isTimersEnabled={isTimersEnabled} />
     </>
   )

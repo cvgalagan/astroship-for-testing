@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import ControlButtons from '../ControlButtons/ControlButtons'
 import './ActivityPage.css'
 
 function ActivityPage() {
@@ -43,15 +44,14 @@ function ActivityPage() {
       {/* Section 2: Video Players */}
       <section className="activity-section">
         <h2>Видео плеер</h2>
-        <div className="controls-group">
-          <button onClick={handleAddVideo} className="control-btn">
-            Добавить видео
-          </button>
-          <button onClick={handleRemoveVideo} className="control-btn">
-            Удалить видео
-          </button>
-          <span className="count-label">Видео: {videoCount}</span>
-        </div>
+        <ControlButtons
+          addLabel="Добавить видео"
+          removeLabel="Удалить видео"
+          onAdd={handleAddVideo}
+          onRemove={handleRemoveVideo}
+          currentCount={videoCount}
+          countLabel="Видео"
+        />
         <div className="video-grid">
           {Array.from({ length: videoCount }).map((_, index) => (
             <div key={index} className="video-wrapper">
@@ -74,15 +74,14 @@ function ActivityPage() {
       {/* Section 3: Image Gallery */}
       <section className="activity-section">
         <h2>Галерея изображений</h2>
-        <div className="controls-group">
-          <button onClick={handleAddImage} className="control-btn">
-            Добавить 3 изображения
-          </button>
-          <button onClick={handleRemoveImage} className="control-btn">
-            Удалить 3 изображения
-          </button>
-          <span className="count-label">Изображений: {imageCount}</span>
-        </div>
+        <ControlButtons
+          addLabel="Добавить 3 изображения"
+          removeLabel="Удалить 3 изображения"
+          onAdd={handleAddImage}
+          onRemove={handleRemoveImage}
+          currentCount={imageCount}
+          countLabel="Изображений"
+        />
         <div className="image-gallery">
           {Array.from({ length: imageCount }).map((_, index) => (
             <div key={index} className="image-item">

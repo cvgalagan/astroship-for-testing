@@ -1,0 +1,153 @@
+.control-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  border: 1px solid #e9ecef;
+  margin-bottom: 20px;
+}
+
+.control-input-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.control-label {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  color: #213547;
+  font-size: 1rem;
+}
+
+.control-input {
+  padding: 8px 12px;
+  margin-left: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 80px;
+  background-color: #ffffff;
+  color: #213547;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.control-input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.control-btn {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  color: #213547;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+  background-color: #e9e9e9;
+  border-color: #3498db;
+  transform: translateY(-1px);
+}
+
+.control-btn:active {
+  transform: translateY(0);
+}
+
+.control-btn-add:hover {
+  border-color: #27ae60;
+}
+
+.control-btn-remove:hover {
+  border-color: #e74c3c;
+}
+
+.control-count-label {
+  font-weight: 600;
+  color: #2c3e50;
+  padding: 10px 15px;
+  background-color: #e9ecef;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* Dark theme support */
+@media (prefers-color-scheme: dark) {
+  .control-buttons {
+    background-color: #1a1a1a;
+    border-color: #444;
+  }
+
+  .control-label {
+    color: rgba(255, 255, 255, 0.87);
+  }
+
+  .control-input {
+    border: 1px solid #444;
+    background-color: #2a2a2a;
+    color: rgba(255, 255, 255, 0.87);
+  }
+
+  .control-input:focus {
+    border-color: #646cff;
+  }
+
+  .control-btn {
+    border: 1px solid #444;
+    background-color: #2a2a2a;
+    color: rgba(255, 255, 255, 0.87);
+  }
+
+  .control-btn:hover {
+    background-color: #3a3a3a;
+    border-color: #646cff;
+  }
+
+  .control-btn-add:hover {
+    border-color: #27ae60;
+  }
+
+  .control-btn-remove:hover {
+    border-color: #e74c3c;
+  }
+
+  .control-count-label {
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #2a2a2a;
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .control-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .control-input-wrapper {
+    width: 100%;
+  }
+
+  .control-label {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .control-input {
+    margin-left: 0;
+    flex: 1;
+    max-width: 100px;
+  }
+
+  .control-btn {
+    width: 100%;
+  }
+}
