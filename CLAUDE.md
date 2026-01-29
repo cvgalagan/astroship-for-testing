@@ -35,18 +35,20 @@ Redux store is configured in `src/store/index.js` with a single slice:
 - **timers slice** (`src/store/timers/timersSlice.js`): Manages timer-related state including count, increment value, and enabled status
 
 ### Routing Structure
-Three main routes defined in `src/App.jsx`:
+Four main routes defined in `src/App.jsx`:
 - `/` - HomePage with timer grid controls
 - `/forms` - FormsPage for form interactions
 - `/window` - WindowPage for window object testing
+- `/activity` - ActivityPage for testing user activity with scrollable images, videos, and image galleries
 
 ### Component Architecture
 - **HomePage**: Controls for adding/removing timers and displays GridPage
 - **GridPage**: Renders a grid of InfiniteTimer components based on timersCount prop
 - **InfiniteTimer**: Self-contained timer component that increments every second when enabled
 - **Navigation**: Navigation menu component
-- **FormsPage**: Page for testing form interactions
+- **FormsPage**: Page for testing form interactions with various input types
 - **WindowPage**: Page for testing window object behavior
+- **ActivityPage**: Page for testing user activity tracking with scrollable images, video players, and dynamic image galleries
 
 ### Analytics Integration
 Yandex.Metrika is embedded directly in `index.html` with WebVisor enabled. The counter ID is `101671390`. Note that `referrer:document.referrer` is explicitly passed in the initialization (see git history for referrer-related changes).

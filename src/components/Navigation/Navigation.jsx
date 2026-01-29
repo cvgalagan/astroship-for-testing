@@ -33,6 +33,14 @@ function Navigation() {
               Окна
             </Link>
           </li>
+          <li>
+            <Link
+              to="/activity"
+              className={location.pathname === '/activity' ? 'nav-link active' : 'nav-link'}
+            >
+              Активность
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>

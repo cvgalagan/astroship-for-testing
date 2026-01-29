@@ -1,0 +1,265 @@
+.activity-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.activity-page h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+}
+
+.page-description {
+  text-align: center;
+  color: #7f8c8d;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.activity-section {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.activity-section h2 {
+  color: #34495e;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+}
+
+/* Controls */
+.controls-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 25px;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  border: 1px solid #e9ecef;
+}
+
+.control-btn {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  color: #213547;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+  background-color: #e9e9e9;
+  border-color: #3498db;
+  transform: translateY(-1px);
+}
+
+.control-btn:active {
+  transform: translateY(0);
+}
+
+.count-label {
+  font-weight: 600;
+  color: #2c3e50;
+  padding: 10px 15px;
+  background-color: #e9ecef;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* Section 1: Scrollable Image */
+.scrollable-container {
+  width: 100%;
+  max-width: 800px;
+  height: 400px;
+  overflow: auto;
+  border: 2px solid #bdc3c7;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+
+.scrollable-image {
+  display: block;
+  width: 1600px;
+  height: 1200px;
+  object-fit: cover;
+}
+
+/* Section 2: Video Grid */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.video-wrapper {
+  background-color: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.video-player {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Section 3: Image Gallery */
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.image-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #ecf0f1;
+  aspect-ratio: 3 / 2;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.image-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Dark theme support */
+@media (prefers-color-scheme: dark) {
+  .activity-page h1 {
+    color: rgba(255, 255, 255, 0.87);
+  }
+
+  .page-description {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .activity-section {
+    background: #2a2a2a;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  }
+
+  .activity-section h2 {
+    color: rgba(255, 255, 255, 0.87);
+    border-bottom-color: #646cff;
+  }
+
+  .controls-group {
+    background-color: #1a1a1a;
+    border-color: #444;
+  }
+
+  .control-btn {
+    border: 1px solid #444;
+    background-color: #2a2a2a;
+    color: rgba(255, 255, 255, 0.87);
+  }
+
+  .control-btn:hover {
+    background-color: #3a3a3a;
+    border-color: #646cff;
+  }
+
+  .count-label {
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #1a1a1a;
+  }
+
+  .scrollable-container {
+    border-color: #444;
+    background-color: #1a1a1a;
+  }
+
+  .image-item {
+    background-color: #1a1a1a;
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .activity-page {
+    padding: 15px;
+  }
+
+  .activity-page h1 {
+    font-size: 2rem;
+  }
+
+  .activity-section {
+    padding: 20px;
+  }
+
+  .activity-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .scrollable-container {
+    height: 300px;
+  }
+
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .image-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+  }
+
+  .controls-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .control-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .activity-page {
+    padding: 10px;
+  }
+
+  .activity-page h1 {
+    font-size: 1.8rem;
+  }
+
+  .activity-section {
+    padding: 15px;
+  }
+
+  .page-description {
+    font-size: 1rem;
+  }
+
+  .scrollable-container {
+    height: 250px;
+  }
+
+  .image-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+}
