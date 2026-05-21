@@ -39,6 +39,9 @@ function FormsPage() {
     settings: ''
   });
 
+  // Состояние для блока "Успех"
+  const [showSuccess, setShowSuccess] = useState(false);
+
   // Обработчики для формы регистрации
   const handleRegistrationChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -427,6 +430,23 @@ function FormsPage() {
             <pre>{submissionResults.settings}</pre>
           </div>
         )}
+      </section>
+
+      {/* Форма "Покажи успех" */}
+      <section className="form-section">
+        <h2>Форма успеха</h2>
+        <form className="demo-form" onSubmit={(e) => e.preventDefault()}>
+          <button
+            type="button"
+            className="submit-btn"
+            onClick={() => setShowSuccess(prev => !prev)}
+          >
+            Покажи успех
+          </button>
+          <div className={showSuccess ? 'success-block success-block--visible' : 'success-block'}>
+            Успех
+          </div>
+        </form>
       </section>
     </div>
   );
