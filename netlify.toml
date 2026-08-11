@@ -1,3 +1,7 @@
+[build.environment]
+  # Overrides the version pinned in the Netlify UI / build image default
+  NODE_VERSION = "24"
+
 [[headers]]
   for = "/*"
   [headers.values]
