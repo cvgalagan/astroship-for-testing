@@ -41,6 +41,14 @@ function Navigation() {
               Активность
             </Link>
           </li>
+          <li>
+            <Link
+              to="/shop"
+              className={location.pathname.startsWith('/shop') ? 'nav-link active' : 'nav-link'}
+            >
+              Магазин
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>
