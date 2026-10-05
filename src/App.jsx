@@ -5,6 +5,7 @@ import HomePage from './components/HomePage/HomePage'
 import FormsPage from './components/FormsPage/FormsPage'
 import WindowPage from './components/WindowPage/WindowPage'
 import ActivityPage from './components/ActivityPage/ActivityPage'
+import WebvisorLabPage from './components/WebvisorLabPage/WebvisorLabPage'
 import ShopLayout from './components/ShopPage/ShopLayout'
 import GalleryPage from './components/ShopPage/GalleryPage'
 import ProductPage from './components/ShopPage/ProductPage'
@@ -26,6 +27,7 @@ function App() {
             <Route path="/forms" element={<FormsPage />} />
             <Route path="/window" element={<WindowPage />} />
             <Route path="/activity" element={<ActivityPage />} />
+            <Route path="/webvisor-lab" element={<WebvisorLabPage />} />
             <Route path="/shop" element={<ShopLayout />}>
               <Route index element={<GalleryPage />} />
               <Route path="product/:productId" element={<ProductPage />} />

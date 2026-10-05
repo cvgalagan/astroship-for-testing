@@ -41,6 +41,7 @@ Routes defined in `src/App.jsx`:
 - `/forms` - FormsPage for form interactions
 - `/window` - WindowPage for window object testing
 - `/activity` - ActivityPage for testing user activity with scrollable images, videos, and image galleries
+- `/webvisor-lab` - WebvisorLabPage with scenarios for WebVisor recordings used as trace references
 - `/shop/*` - test e-commerce shop (nested routes under `ShopLayout`): `/shop` gallery, `/shop/product/:productId`, `/shop/cart`, `/shop/checkout`, `/shop/payment`, `/shop/orders`, `/shop/orders/:orderId`, `/shop/coverage`
 
 ### Component Architecture
@@ -51,6 +52,7 @@ Routes defined in `src/App.jsx`:
 - **FormsPage**: Page for testing form interactions with various input types
 - **WindowPage**: Page for testing window object behavior
 - **ActivityPage**: Page for testing user activity tracking with scrollable images, video players, and dynamic image galleries
+- **WebvisorLabPage**: Scenarios for WebVisor recordings (`src/components/WebvisorLabPage/scenarios/`): fields and clicks, privacy classes, selection, repeated cards, page reaction, DOM operations outside React, title changes, iframes and non-standard elements. Each scenario is a `LabSection` with a short instruction. Iframe documents are static files in `public/frames/` without the counter
 - **ControlButtons**: Shared component for add/remove/toggle controls with optional input field and count display (used in HomePage and ActivityPage)
 
 ### Test Shop (`/shop`)
@@ -64,7 +66,7 @@ A fake storefront with no backend, built to exercise every `screen_type` × `act
 - **Catalog** (`src/shop/catalog.js`) is static, images come from picsum.photos. Orders are created in the browser: checkout/quick order → `awaiting_payment` → payment or `PAY_CREATED_ORDER` from order details.
 
 ### Analytics Integration
-Yandex.Metrika is embedded directly in `index.html` with WebVisor enabled. Shop actions additionally push to `dataLayer` and call `ym(..., 'reachGoal', '<screen>__<action>')` plus ecommerce containers (`src/shop/analytics.js`). The counter ID is `101671390`. Note that `referrer:document.referrer` is explicitly passed in the initialization (see git history for referrer-related changes).
+Yandex.Metrika is embedded directly in `index.html` with WebVisor enabled. `childIframe: true` makes WebVisor record same-origin iframes. Shop actions additionally push to `dataLayer` and call `ym(..., 'reachGoal', '<screen>__<action>')` plus ecommerce containers (`src/shop/analytics.js`). The counter ID is `101671390`. Note that `referrer:document.referrer` is explicitly passed in the initialization (see git history for referrer-related changes).
 
 ### ESLint Configuration
 - Extends recommended React and React Hooks rules

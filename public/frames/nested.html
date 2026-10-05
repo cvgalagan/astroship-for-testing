@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Фрейм с вложенным фреймом</title>
+    <style>
+      body { font-family: sans-serif; margin: 12px; color: #2c3e50; background: #eef6fb; }
+      iframe { width: 100%; height: 220px; border: 2px dashed #3498db; }
+      button { padding: 6px 12px; }
+    </style>
+  </head>
+  <body>
+    <h3>Внешний фрейм</h3>
+    <p>
+      <button id="nested-outer-button" type="button" data-testid="nested-outer-button">Кнопка во внешнем фрейме</button>
+      <span id="nested-outer-result"></span>
+    </p>
+    <iframe src="/frames/a.html" title="Вложенный фрейм с документом A"></iframe>
+    <script>
+      document.getElementById('nested-outer-button').addEventListener('click', function () {
+        document.getElementById('nested-outer-result').textContent = 'Нажато во внешнем фрейме: ' + new Date().toLocaleTimeString();
+      });
+    </script>
+  </body>
+</html>

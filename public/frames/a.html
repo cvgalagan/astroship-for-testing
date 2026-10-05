@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Фрейм: документ A</title>
+    <style>
+      body { font-family: sans-serif; margin: 12px; color: #2c3e50; }
+      .frame-row { display: flex; gap: 8px; align-items: center; margin: 8px 0; flex-wrap: wrap; }
+      button { padding: 6px 12px; }
+    </style>
+  </head>
+  <body>
+    <h3>Документ A</h3>
+    <p id="frame-a-text">Текст документа A. Его можно выделить мышью внутри фрейма.</p>
+    <div class="frame-row">
+      <label for="frame-a-input">Поле во фрейме A</label>
+      <input id="frame-a-input" name="frameNote" type="text" />
+    </div>
+    <div class="frame-row">
+      <button id="frame-a-button" type="button" data-testid="frame-a-button">Кнопка во фрейме A</button>
+      <span id="frame-a-result"></span>
+    </div>
+    <a href="/frames/b.html">Перейти на документ B внутри фрейма (без смены src)</a>
+    <script>
+      document.getElementById('frame-a-button').addEventListener('click', function () {
+        document.getElementById('frame-a-result').textContent = 'Нажато во фрейме A: ' + new Date().toLocaleTimeString();
+      });
+    </script>
+  </body>
+</html>

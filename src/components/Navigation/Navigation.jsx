@@ -43,6 +43,14 @@ function Navigation() {
           </li>
           <li>
             <Link
+              to="/webvisor-lab"
+              className={location.pathname === '/webvisor-lab' ? 'nav-link active' : 'nav-link'}
+            >
+              Сценарии Вебвизора
+            </Link>
+          </li>
+          <li>
+            <Link
               to="/shop"
               className={location.pathname.startsWith('/shop') ? 'nav-link active' : 'nav-link'}
             >

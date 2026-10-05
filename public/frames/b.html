@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Фрейм: документ B</title>
+    <style>
+      body { font-family: sans-serif; margin: 12px; color: #2c3e50; background: #fdf6e3; }
+      .frame-row { display: flex; gap: 8px; align-items: center; margin: 8px 0; flex-wrap: wrap; }
+      button { padding: 6px 12px; }
+    </style>
+  </head>
+  <body>
+    <h3>Документ B</h3>
+    <p id="frame-b-text">Текст документа B: другой документ в том же фрейме.</p>
+    <div class="frame-row">
+      <label for="frame-b-select">Выбор во фрейме B</label>
+      <select id="frame-b-select" name="frameChoice">
+        <option value="">Не выбрано</option>
+        <option value="one">Первый</option>
+        <option value="two">Второй</option>
+      </select>
+    </div>
+    <div class="frame-row">
+      <button id="frame-b-button" type="button" data-testid="frame-b-button">Кнопка во фрейме B</button>
+      <span id="frame-b-result"></span>
+    </div>
+    <a href="/frames/a.html">Вернуться на документ A внутри фрейма (без смены src)</a>
+    <script>
+      document.getElementById('frame-b-button').addEventListener('click', function () {
+        document.getElementById('frame-b-result').textContent = 'Нажато во фрейме B: ' + new Date().toLocaleTimeString();
+      });
+    </script>
+  </body>
+</html>
