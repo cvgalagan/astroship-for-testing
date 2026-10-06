@@ -27,12 +27,12 @@ function SelectionScenario() {
         <input type="search" id="lab-select-search" name="selectSearch" defaultValue="платье из шёлка" />
       </div>
       <div className="form-group">
-        <label htmlFor="lab-select-textarea">Textarea — рекордер выделение не записывает</label>
+        <label htmlFor="lab-select-textarea">Textarea — выделение тоже записывается</label>
         <textarea
           id="lab-select-textarea"
           name="selectTextarea"
           rows="3"
-          defaultValue="Выделение в textarea рекордер не отправляет: тип поля не проходит проверку."
+          defaultValue="Выделите часть текста внутри textarea: рекордер записывает и его."
         />
       </div>
     </LabSection>
